@@ -81,7 +81,7 @@ static const Layout layouts[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_d,	   zoom,           {0} },
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -91,6 +91,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_x,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_z,      incnmaster,     {.i = -1 } },
 
+	{ MODKEY,                       XK_e,	   togglebar,      {0} },
 	{ MODKEY,                       XK_space,  togglebar,      {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 
