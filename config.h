@@ -41,9 +41,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,	   zoom,           {0} },
+	{ MODKEY,                       XK_a,	   zoom,           {0} },
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -96,11 +96,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  togglebar,      {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 
-	{ MODKEY,			XK_w,      incrgaps,       {.i = +5 } },
-	{ MODKEY,			XK_q,      incrgaps,       {.i = -5 } },
+	{ MODKEY,			XK_r,      incrgaps,       {.i = +20 } },
+	{ MODKEY,			XK_t,      incrgaps,       {.i = -20 } },
+	{ MODKEY,			XK_q,      incrivgaps,     {.i = +20 } },
+	{ MODKEY,			XK_w,      incrivgaps,     {.i = -20 } },
+	{ MODKEY,			XK_f,      togglegaps,     {0} },
+	{ MODKEY,			XK_g,      defaultgaps,    {0} },
 
-	{ MODKEY,                       XK_s,      focusmon,       {.i = +1 } },
-	{ MODKEY,			XK_a,	   tagmon,         {.i = +1 } },
+	{ MODKEY,			XK_s,	   tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_d,      focusmon,       {.i = +1 } },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
